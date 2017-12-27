@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item>
+        <shape>
+            <solid android:color="@color/white" />
+        </shape>
+    </item>
+
+
+
+    <item android:bottom="1dp" android:right="1dp" android:top="1dp" android:left="1dp">
+
+
+
+        <shape>
+            <solid android:color="@color/login_bk" />
+
+            <padding android:bottom="10dp"
+                android:left="20dp"
+                android:right="20dp"
+                android:top="10dp" />
+        </shape>
+
+
+
+    </item>
+
+    <item>
+        <ripple android:color="@color/white">
+            <item>
+                <selector>
+                    <item android:drawable="@color/login_bk"/>
+                </selector>
+            </item>
+        </ripple>
+    </item>
+
+</layer-list>

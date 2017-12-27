@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!--<camera.CameraTextureView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/player_textureView"-->
+        <!--app:maxScale="6"-->
+        <!--/>-->
+
+
+    <camera.YUVGLTextureView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/player_yuv"
+        app:maxScale="6"
+        />
+
+    <!--<camera.YUVGLSurfaceView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:maxScale="6"-->
+        <!--/>-->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <Button
+            android:id="@+id/btn_zoomIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="23dp"
+            android:layout_marginStart="49dp"
+            android:text="+"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_zoomOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btn_zoomIn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:text="-"
+            android:visibility="gone"/>
+
+        <ZoomControls
+            android:id="@+id/zoom_control"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            />
+
+        <Button
+            android:id="@+id/btn_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="拍照" />
+
+    </RelativeLayout>
+
+
+</FrameLayout>
