@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
-
-
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 26
@@ -18,6 +18,11 @@ android {
             abiFilters 'armeabi-v7a'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -32,8 +37,18 @@ android {
     }
     sourceSets {
         main{
-//            jniLibs.srcDirs = ['libs']  // make so file twice
+            jniLibs.srcDirs = ['libs']  // make so file twice
         }
+    }
+    packagingOptions{
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/ASL2.0'
+//        exclude 'lib/armeabi-v7a/libplayer_jni.so'// fixme
+//        exclude 'lib/armeabi-v7a/libhwtrans.so'
+//        exclude 'lib/armeabi-v7a/libhwplay.so'
+
+        pickFirst 'lib/armeabi-v7a/libplayer_jni.so'
+        pickFirst 'lib/armeabi-v7a/libhwplay.so'
     }
 
 
@@ -45,12 +60,16 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.android.support:appcompat-v7:26+'
     compile 'com.android.support:design:26+'
     testCompile 'junit:junit:4.12'
-    compile 'com.jakewharton:butterknife:8.5.1'
+    kapt 'com.android.databinding:compiler:2.3.3'
     compile 'com.google.android.exoplayer:exoplayer:r2.3.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+    implementation 'com.jakewharton:butterknife:8.8.0'
+    kapt 'com.jakewharton:butterknife-compiler:8.8.0'
     compile 'com.github.ChillingVan:android-openGL-canvas:v1.2.1.0'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.0'
@@ -61,4 +80,10 @@ dependencies {
     compile 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
 
     compile project(path: ':mylibrary')
+
+    // Leak Canary
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
+
 }
