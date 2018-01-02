@@ -2,13 +2,9 @@ package com.example.viewmodel.sinvoice
 
 import android.content.Context
 import android.databinding.ObservableField
-import android.util.AndroidException
 import android.util.Log
 import com.example.viewmodel.BaseViewModel
-import io.reactivex.Observable
-import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Action
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
@@ -22,24 +18,34 @@ class SinVoiceViewModel(private val mContext: Context):BaseViewModel {
     val mReceive = ObservableField<String>("receive")
     val mState   = ObservableField<String>("Ready")
 
-    private val mSendMgr = SinVoiceMgr()
+    private val mSendMgr = SinVoiceSendMgr()
+    private val mRecMgr  = SinVoiceReceiveMgr()
 
-
-    val toOnSend = Action {
+    val toOnSendStart = Action {
         Log.i("123","do send")
         mSendMgr.setData(mSend.get()).play()
                 .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(Consumer { b->
-
-
-
-
+                Log.i("123","send play $b")
                 }, Consumer { e->e.printStackTrace() }, Action { Log.i("123","play finish") })
     }
 
-    val toOnReceive = Action {
-        Log.i("123","do receive")
+    val toOnSendStop = Action {
+        mSendMgr.stop()
     }
+
+
+
+    val toOnReceiveStart = Action {
+        Log.i("123","do receive start")
+        mRecMgr.start()
+    }
+
+    val toOnReceiveStop = Action {
+        Log.i("123","do receive stop")
+        mRecMgr.stop()
+    }
+
 
 }

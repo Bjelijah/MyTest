@@ -33,9 +33,17 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="send"
-                android:onClick="@{vm.toOnSend}"
+                android:text="send_start"
+                android:onClick="@{vm.toOnSendStart}"
                 />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="send_stop"
+                android:onClick="@{vm.toOnSendStop}"
+                />
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -48,13 +56,30 @@
 
 
 
-
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="receive"
-            android:onClick="@{vm.toOnReceive}"/>
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="receive_start"
+                android:onClick="@{vm.toOnReceiveStart}"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="receive_stop"
+                android:onClick="@{vm.toOnReceiveStop}"/>
+
+
+        </LinearLayout>
+
+
+
+
 
         <TextView
             android:layout_width="wrap_content"
