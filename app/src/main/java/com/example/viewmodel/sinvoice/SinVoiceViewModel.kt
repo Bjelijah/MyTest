@@ -2,6 +2,7 @@ package com.example.viewmodel.sinvoice
 
 import android.content.Context
 import android.databinding.ObservableField
+import android.speech.tts.Voice
 import android.util.Log
 import com.example.viewmodel.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -18,8 +19,17 @@ class SinVoiceViewModel(private val mContext: Context):BaseViewModel {
     val mReceive = ObservableField<String>("receive")
     val mState   = ObservableField<String>("Ready")
 
-    private val mSendMgr = SinVoiceSendMgr()
-    private val mRecMgr  = SinVoiceReceiveMgr()
+    private val mSendMgr = SinVoiceSendMgr.Builder()
+            .setSample(VoiceCommon.Type.SAMPLE_RATE_44)
+            .setEncodeBufType(VoiceCommon.Type.BITS_16)
+            .create()
+
+    private val mRecMgr  = SinVoiceReceiveMgr.Builder()
+            .setSimple(VoiceCommon.Type.SAMPLE_RATE_44)
+            .setEncodeBufType(VoiceCommon.Type.BITS_16)
+            .create()
+
+
 
     val toOnSendStart = Action {
         Log.i("123","do send")
@@ -40,6 +50,7 @@ class SinVoiceViewModel(private val mContext: Context):BaseViewModel {
     val toOnReceiveStart = Action {
         Log.i("123","do receive start")
         mRecMgr.start()
+
     }
 
     val toOnReceiveStop = Action {
