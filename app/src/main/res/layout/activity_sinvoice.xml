@@ -89,7 +89,34 @@
             />
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{vm.mSendNative}"
+                android:hint="input send message"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="send native"
+                android:onClick="@{vm.toOnSendNativeStart}"/>
+
+
+
+        </LinearLayout>
+
+
+
     </LinearLayout>
+
+
+
 
 
 </layout>

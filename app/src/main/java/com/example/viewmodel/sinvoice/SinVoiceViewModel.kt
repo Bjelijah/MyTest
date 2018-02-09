@@ -4,6 +4,7 @@ import android.content.Context
 import android.databinding.ObservableField
 import android.speech.tts.Voice
 import android.util.Log
+import com.example.utils.JniUtil
 import com.example.viewmodel.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Action
@@ -18,6 +19,9 @@ class SinVoiceViewModel(private val mContext: Context):BaseViewModel {
     val mSend    = ObservableField<String>("send")
     val mReceive = ObservableField<String>("receive")
     val mState   = ObservableField<String>("Ready")
+
+    val mSendNative = ObservableField<String>("")
+
 
     private val mSendMgr = SinVoiceSendMgr.Builder()
             .setSample(VoiceCommon.Type.SAMPLE_RATE_44)
@@ -56,6 +60,18 @@ class SinVoiceViewModel(private val mContext: Context):BaseViewModel {
     val toOnReceiveStop = Action {
         Log.i("123","do receive stop")
         mRecMgr.stop()
+    }
+
+    val toOnSendNativeStart = Action {
+        Log.i("123","send native start")
+        var buf:ByteArray = JniUtil.sendNativeVoice(mSendNative.get())
+        mSendMgr.playNative(buf)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(Consumer { b->
+                    Log.i("123","res=$b")
+                    mSendMgr.stop()
+                }, Consumer { e->e.printStackTrace() }, Action { Log.i("123","play native finish") })
     }
 
 

@@ -4,10 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.example.viewmodel.BaseViewModel
-import com.howell.mytest.CameraViewActivity
-import com.howell.mytest.Flash2Activity
-import com.howell.mytest.RxActivity
-import com.howell.mytest.SinVoiceActivity
+import com.howell.mytest.*
 import com.howell.p.mylibrary.MyTest
 import io.reactivex.functions.Action
 
@@ -21,5 +18,5 @@ class MainViewModel(private val mContext: Context) : BaseViewModel {
     val onClickRetrofit  = Action { mContext.startActivity(Intent(mContext,RxActivity::class.java)) }
     val onClickTest      = Action { Log.i("123",MyTest.justTest()) }
     val onClickVoice     = Action { mContext.startActivity(Intent(mContext,SinVoiceActivity::class.java)) }
-
+    val onClickDagger    = Action { mContext.startActivity(Intent(mContext,Dagger2Activity::class.java)) }
 }

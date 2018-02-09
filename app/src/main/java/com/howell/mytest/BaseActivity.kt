@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.viewmodel.BaseViewModel
 import com.example.viewmodel.BindHelper

@@ -28,4 +28,11 @@ public class JniUtil {
 	public static native void hwPlayerDeinit();
 	public static native void hwPlayerPlay();
 	public static native void hwPlayerStop();
+
+
+
+	//native voice ququ test
+	public static native byte[] sendNativeVoice(String sendMsg);
+
+
 }

@@ -433,3 +433,16 @@ JNIEXPORT void JNICALL Java_com_example_utils_JniUtil_hwPlayerStop
 	//TODO
     hwplay_stop(res->play_handle);
 }
+
+
+JNIEXPORT jbyteArray JNICALL Java_com_example_utils_JniUtil_sendNativeVoice
+		(JNIEnv *env, jclass clz, jstring sendMsg){
+	const char *str = env->GetStringUTFChars(sendMsg, 0);
+	int n = 1024;
+	jbyteArray arr = env->NewByteArray(n);
+	char *a;
+	//todo
+	env->SetByteArrayRegion(arr,0,n,(jbyte*)a);
+	env->ReleaseStringUTFChars(sendMsg,str);
+	return arr;
+}

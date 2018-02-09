@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+//apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 26
@@ -51,7 +52,9 @@ android {
         pickFirst 'lib/armeabi-v7a/libhwplay.so'
     }
 
-
+    kapt {
+        generateStubs = true
+    }
     useLibrary 'org.apache.http.legacy'
 }
 
@@ -79,11 +82,31 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
     compile 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
 
-    compile project(path: ':mylibrary')
+    implementation project(path: ':mylibrary')
 
     // Leak Canary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
+
+
+    //  implementation "com.facebook.react:react-native:+"
+
+    //dagger2
+//    annotationProcessor 'com.google.dagger:dagger-compiler:2.+'
+//    provided 'javax.annotation:jsr250-api:1.0'
+//    compile 'com.google.dagger:dagger:2.+'
+
+
+
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile "com.google.dagger:dagger:2.+"
+    compile "com.google.dagger:dagger-android:2.+"
+    compile "com.google.dagger:dagger-android-support:2.+"
+//    annotationProcessor "com.google.dagger:dagger-compiler:2.+"
+//    annotationProcessor "com.google.dagger:dagger-android-processor:2.+"
+    kapt "com.google.dagger:dagger-compiler:2.+"
+    kapt "com.google.dagger:dagger-android-processor:2.+"
+    kapt "com.google.dagger:dagger-android-support:2.+"
 
 }

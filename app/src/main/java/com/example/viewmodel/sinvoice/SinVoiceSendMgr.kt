@@ -95,6 +95,24 @@ class SinVoiceSendMgr() {
         }
     }
 
+    fun playNative(buf:ByteArray):Observable<Boolean>{
+        return Observable.create { o->
+            try {
+                if (mAudio==null)mAudio = createAudioTrack()
+                mAudio?.play()
+                mAudio?.write(buf,0,buf.size)
+                o.onNext(true)
+            }catch (e:Exception){
+                o.onError(e)
+            }finally {
+                o.onComplete()
+            }
+        }
+    }
+
+
+
+
 
     private fun setTextData(){
 //        mData = " !\"#$%&\'()*+,-./0123456789:;<=>?"

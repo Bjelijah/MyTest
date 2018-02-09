@@ -135,6 +135,14 @@ JNIEXPORT void JNICALL Java_com_example_utils_JniUtil_hwPlayerPlay
 JNIEXPORT void JNICALL Java_com_example_utils_JniUtil_hwPlayerStop
   (JNIEnv *, jclass);
 
+/*
+ * Class:     com_example_utils_JniUtil
+ * Method:    sendNativeVoice
+ * Signature: (Ljava/lang/String;)[B
+ */
+JNIEXPORT jbyteArray JNICALL Java_com_example_utils_JniUtil_sendNativeVoice
+  (JNIEnv *, jclass, jstring);
+
 #ifdef __cplusplus
 }
 #endif

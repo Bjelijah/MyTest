@@ -69,6 +69,15 @@
             android:text="test voice"
             />
 
+        <Button
+            android:id="@+id/btn_dagger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_voice"
+            android:layout_below="@+id/btn_voice"
+            android:layout_marginTop="12dp"
+            android:onClick="@{vm.onClickDagger}"
+            android:text="dagger2" />
 
 
     </RelativeLayout>
