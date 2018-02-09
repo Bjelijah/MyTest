@@ -1,8 +1,7 @@
 package com.example.dagger;
 
-import com.example.dagger.api.ActivityComponent;
-import com.example.dagger.api.ActivityModule;
-import com.example.dagger.api.ApiModule;
+
+import com.example.dagger.sample1.ApiModule;
 import com.example.dagger.sample1.Car;
 import com.howell.mytest.APP;
 

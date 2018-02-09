@@ -2,6 +2,8 @@ package com.example.dagger.sample1;
 
 import android.util.Log;
 
+import javax.inject.Inject;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -30,7 +32,7 @@ public class CarModel {
 
 
 class Engine{
-
+//    @Inject
      Engine(){
         Log.w("123","new Engine");
     }
@@ -43,7 +45,7 @@ class Engine{
 
 
 class Seat{
-
+//    @Inject
      Seat(){
         Log.w("123","new Seat");
     }
@@ -56,7 +58,7 @@ class Seat{
 
 
 class Wheel{
-
+//    @Inject
      Wheel(){
         Log.w("123","new wheel");
     }

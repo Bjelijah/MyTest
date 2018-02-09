@@ -5,7 +5,7 @@ import android.content.Context
 import com.example.dagger.AppComponent
 import com.example.dagger.AppModule
 import com.example.dagger.DaggerAppComponent
-import com.example.dagger.api.ApiModule
+
 import com.example.dagger.sample1.CarModel
 import com.example.viewmodel.BindHelper
 

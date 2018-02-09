@@ -1,6 +1,7 @@
 package com.example.viewmodel.dagger2;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.dagger.sample1.Car;
@@ -16,13 +17,23 @@ import io.reactivex.functions.Action;
 
 public class DaggerViewModel implements BaseViewModel {
     private Context mContext;
-    private Car mCar1;
-    private Car mCar2;
+    private Car mCar1,mCar2,mCar3,mCar4;
     public DaggerViewModel(Context c, Car car1,Car car2){
         mContext = c;
         mCar1 = car1;
         mCar2 = car2;
     }
+
+    public DaggerViewModel setMoreCar(Car... cars){
+        if (cars==null)return this;
+        if(cars[0]!=null) mCar3 = cars[0];
+        if(cars[1]!=null) mCar4 = cars[1];
+
+        return this;
+    }
+
+
+
 
     public Action onBtnClick(){
         return new Action() {
@@ -43,6 +54,18 @@ public class DaggerViewModel implements BaseViewModel {
             }
         };
     }
+
+    public Action onBtnClick3(){
+        return new Action() {
+            @Override
+            public void run() throws Exception {
+                Log.i("123","on btn3 click");
+                mCar3.print();
+                mCar4.print();
+            }
+        };
+    }
+
 
 
 }

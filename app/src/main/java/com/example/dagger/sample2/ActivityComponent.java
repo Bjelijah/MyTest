@@ -1,4 +1,4 @@
-package com.example.dagger.api;
+package com.example.dagger.sample2;
 
 import com.howell.mytest.Dagger2Activity;
 

@@ -1,6 +1,7 @@
 package com.example.dagger.sample1;
 
 import dagger.Component;
+import dagger.Subcomponent;
 
 /**
  * Created by Administrator on 2018/2/8.

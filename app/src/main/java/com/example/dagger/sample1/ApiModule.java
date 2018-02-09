@@ -1,6 +1,4 @@
-package com.example.dagger.api;
-
-import com.example.dagger.sample1.Car;
+package com.example.dagger.sample1;
 
 import dagger.Module;
 import dagger.Provides;
