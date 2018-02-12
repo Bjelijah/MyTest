@@ -18,7 +18,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
  * Created by Administrator on 2018/2/8.
  */
 @Singleton
-@Component(modules = {AppModule.class,ApiModule.class})
+@Component(modules = AppModule.class)
 public interface AppComponent extends AndroidInjector<APP> {
 
 //    ActivityComponent addSub(ActivityModule module);

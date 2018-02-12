@@ -79,6 +79,16 @@
             android:onClick="@{vm.onClickDagger}"
             android:text="dagger2" />
 
+        <Button
+            android:id="@+id/btn_dagger_ex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_dagger"
+            android:layout_below="@+id/btn_dagger"
+            android:layout_marginTop="12dp"
+            android:onClick="@{vm.onClickDagger2}"
+            android:text="daggerEx" />
+
 
     </RelativeLayout>
 </layout>
