@@ -32,7 +32,7 @@ public class CarModel {
 
 
 class Engine{
-//    @Inject
+
      Engine(){
         Log.w("123","new Engine");
     }
@@ -45,7 +45,7 @@ class Engine{
 
 
 class Seat{
-//    @Inject
+
      Seat(){
         Log.w("123","new Seat");
     }
@@ -58,7 +58,7 @@ class Seat{
 
 
 class Wheel{
-//    @Inject
+
      Wheel(){
         Log.w("123","new wheel");
     }

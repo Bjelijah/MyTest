@@ -25,7 +25,9 @@ public class Car {
     }
 
     public Car(String str){
+        Log.i("123","~~~~~~~~~~~new Car "+str);
         flag = str;
+        DaggerCarComponent.create().inject(this);
     }
 
 

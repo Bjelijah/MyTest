@@ -1,6 +1,10 @@
 package com.example.dagger;
 
 import android.app.Application;
+import android.content.Context;
+
+import com.example.dagger.sample1.CarComponent;
+import com.howell.mytest.APP;
 
 import javax.inject.Singleton;
 
@@ -23,6 +27,7 @@ public class AppModule {
     public Application provideApplication(){
         return application;
     }
+
 
 
 

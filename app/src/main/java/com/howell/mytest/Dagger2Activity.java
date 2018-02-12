@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-import com.example.dagger.DaggerAppComponent;
 
 import com.example.dagger.sample1.Car;
 import com.example.dagger.sample2.ActivityModule;
