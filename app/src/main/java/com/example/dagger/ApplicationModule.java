@@ -9,8 +9,8 @@ import dagger.Module;
 /**
  * Created by Administrator on 2018/2/12.
  */
-@Module
-public abstract class ApplicationModule {
-    @Binds
-    abstract Context bindContext(Application app);
-}
+//@Module
+//public abstract class ApplicationModule {
+//    @Binds
+//    abstract Context bindContext(Application app);
+//}

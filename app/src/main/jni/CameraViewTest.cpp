@@ -11,7 +11,7 @@
 #include "include/stream_type.h"
 #include "com_example_utils_JniUtil.h"
 #include <string.h>
-
+#include "XHWWaveSndSDK.h"
 #define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, "JNI", __VA_ARGS__))
 #define LOGW(...) ((void)__android_log_print(ANDROID_LOG_WARN, "JNI", __VA_ARGS__))
 #define LOGE(...) ((void)__android_log_print(ANDROID_LOG_ERROR, "JNI", __VA_ARGS__))
@@ -439,10 +439,18 @@ JNIEXPORT jbyteArray JNICALL Java_com_example_utils_JniUtil_sendNativeVoice
 		(JNIEnv *env, jclass clz, jstring sendMsg){
 	const char *str = env->GetStringUTFChars(sendMsg, 0);
 	int n = 1024;
-	jbyteArray arr = env->NewByteArray(n);
-	char *a;
+
+	char *a=NULL;
+	int len = strlen(str);
 	//todo
+
+	XHWWaveSndSDK_start();
+	XHWWaveSndSDK_GenWave(str,len,&a,&n);
+	XHWWaveSndSDK_stop();
+	LOGI("len=%d  str=%s\n",len,str);
+	jbyteArray arr = env->NewByteArray(n);
 	env->SetByteArrayRegion(arr,0,n,(jbyte*)a);
 	env->ReleaseStringUTFChars(sendMsg,str);
+	free(a);
 	return arr;
 }

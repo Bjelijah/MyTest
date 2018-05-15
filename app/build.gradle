@@ -76,6 +76,7 @@ dependencies {
     compile 'com.github.ChillingVan:android-openGL-canvas:v1.2.1.0'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
@@ -109,4 +110,8 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:2.+"
     kapt "com.google.dagger:dagger-android-support:2.+"
 
+    compile "android.arch.persistence.room:runtime:+"
+    compile "android.arch.persistence.room:rxjava2:+"
+    annotationProcessor "android.arch.persistence.room:compiler:+"
+    kapt "android.arch.persistence.room:compiler:+"
 }

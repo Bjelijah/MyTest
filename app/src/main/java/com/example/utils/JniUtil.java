@@ -3,6 +3,7 @@ package com.example.utils;
 public class JniUtil {
 	
 	static{
+		System.loadLibrary("hwwavesndsdk");
 		System.loadLibrary("hwplay");
 		System.loadLibrary("player_jni");
 	}

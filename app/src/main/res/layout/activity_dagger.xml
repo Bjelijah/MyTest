@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-    <data>
-        <variable
-            name = "vm"
-            type = "com.example.viewmodel.dagger2.DaggerViewModel"/>
-    </data>
+    <!--<data>-->
+        <!--<variable-->
+            <!--name = "vm"-->
+            <!--type = "com.example.viewmodel.dagger2.DaggerViewModel"/>-->
+    <!--</data>-->
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <!--android:onClick="@{vm.onBtnClick()}"-->
         <Button
             android:id="@+id/btn_test"
             android:layout_width="wrap_content"
@@ -22,7 +22,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="34dp"
             android:layout_marginTop="38dp"
-            android:onClick="@{vm.onBtnClick()}"
+
             android:text="Test" />
 
         <Button
@@ -32,18 +32,10 @@
             android:layout_alignStart="@+id/btn_test"
             android:layout_below="@+id/btn_test"
             android:layout_marginTop="26dp"
-            android:onClick="@{vm.onBtnClick2()}"
+
             android:text="Test Car2" />
 
-        <Button
-            android:id="@+id/btn_test3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/btn_test2"
-            android:layout_below="@+id/btn_test2"
-            android:layout_marginTop="21dp"
-            android:onClick="@{vm.onBtnClick3()}"
-            android:text="Button" />
+        <!--android:onClick="@{vm.onBtnClick2()}"-->
 
 
     </RelativeLayout>

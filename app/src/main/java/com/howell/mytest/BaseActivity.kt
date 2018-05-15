@@ -16,17 +16,20 @@ import com.example.viewmodel.BindHelper
  */
 abstract class BaseActivity : AppCompatActivity() {
     lateinit var mBind:ViewDataBinding
+    lateinit var mViewModel: BaseViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBind = DataBindingUtil.setContentView(this,getLayoutId())
-        BindHelper.sDefaultBinder.bind(mBind,createViewModel())
+        mViewModel = createViewModel()
+        BindHelper.sDefaultBinder.bind(mBind,mViewModel)
     }
 
 
     override fun onDestroy() {
         super.onDestroy()
         Log.e("123","ondestry")
+        mViewModel.onDestory()
         BindHelper.sDefaultBinder.bind(mBind,null)
         mBind.executePendingBindings()
     }
