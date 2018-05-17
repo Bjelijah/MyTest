@@ -19,8 +19,8 @@ class MainViewModel(private val mContext: Context) : BaseViewModel {
     val onClickRetrofit  = Action { mContext.startActivity(Intent(mContext,RxActivity::class.java)) }
     val onClickTest      = Action { Log.i("123",MyTest.justTest()) }
     val onClickVoice     = Action { mContext.startActivity(Intent(mContext,SinVoiceActivity::class.java)) }
-    val onClickDagger    = Action{}// { mContext.startActivity(Intent(mContext,Dagger2Activity::class.java)) }
-    val onClickDagger2   = Action{}// { mContext.startActivity(Intent(mContext,ExDagger2Activity::class.java)) }
+    val onClickDagger    = Action { mContext.startActivity(Intent(mContext,Dagger2Activity::class.java)) }
+    val onClickDagger2   = Action { mContext.startActivity(Intent(mContext,ExDagger2Activity::class.java)) }
     val onClickRoom      = Action { mContext.startActivity(Intent(mContext,RoomActivity::class.java))}
     val onClickList      = Action { mContext.startActivity(Intent(mContext,MyListViewActivity::class.java))}
 }

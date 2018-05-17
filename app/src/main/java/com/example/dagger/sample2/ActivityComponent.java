@@ -1,13 +1,13 @@
-//package com.example.dagger.sample2;
-//
-//import com.howell.mytest.Dagger2Activity;
-//
-//import dagger.Component;
-//
-///**
-// * Created by Administrator on 2018/2/9.
-// */
-//@Component(modules = ActivityModule.class)
-//public interface ActivityComponent {
-//    void inject(Dagger2Activity activity);
-//}
+package com.example.dagger.sample2;
+
+import com.howell.mytest.Dagger2Activity;
+
+import dagger.Component;
+
+/**
+ * Created by Administrator on 2018/2/9.
+ */
+@Component(modules = ActivityModule.class)
+public interface ActivityComponent {
+    void inject(Dagger2Activity activity);
+}

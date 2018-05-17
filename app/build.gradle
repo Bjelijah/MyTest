@@ -101,14 +101,15 @@ dependencies {
 
 
     provided 'org.glassfish:javax.annotation:10.0-b28'
-    compile "com.google.dagger:dagger:2.+"
-    compile "com.google.dagger:dagger-android:2.+"
-    compile "com.google.dagger:dagger-android-support:2.+"
-//    annotationProcessor "com.google.dagger:dagger-compiler:2.+"
-//    annotationProcessor "com.google.dagger:dagger-android-processor:2.+"
-    kapt "com.google.dagger:dagger-compiler:2.+"
-    kapt "com.google.dagger:dagger-android-processor:2.+"
-    kapt "com.google.dagger:dagger-android-support:2.+"
+    implementation "com.google.dagger:dagger:2.11"
+    implementation "com.google.dagger:dagger-android:2.11"
+    implementation "com.google.dagger:dagger-android-support:2.11"
+
+    annotationProcessor "com.google.dagger:dagger-compiler:2.11"
+    annotationProcessor "com.google.dagger:dagger-android-processor:2.11"
+    kapt "com.google.dagger:dagger-compiler:2.11"
+    kapt "com.google.dagger:dagger-android-processor:2.11"
+    kapt "com.google.dagger:dagger-android-support:2.11"
 
     compile "android.arch.persistence.room:runtime:+"
     compile "android.arch.persistence.room:rxjava2:+"
