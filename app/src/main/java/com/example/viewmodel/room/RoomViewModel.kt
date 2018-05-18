@@ -24,6 +24,8 @@ import javax.inject.Inject
  * Created by Administrator on 2018/2/26.
  */
 class RoomViewModel:BaseViewModel {
+    override fun onCreate() {
+    }
 
     val mContext:Context
 

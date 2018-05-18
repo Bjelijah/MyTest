@@ -23,6 +23,7 @@ abstract class BaseActivity : AppCompatActivity() {
         mBind = DataBindingUtil.setContentView(this,getLayoutId())
         mViewModel = createViewModel()
         BindHelper.sDefaultBinder.bind(mBind,mViewModel)
+        mViewModel.onCreate()
     }
 
 

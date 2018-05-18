@@ -109,6 +109,16 @@
             android:text="ListView"
             android:onClick="@{vm.onClickList}"/>
 
+        <Button
+            android:id="@+id/btn_serial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_exListView"
+            android:layout_alignTop="@+id/btn_view"
+            android:text="Serial"
+            android:onClick="@{vm.onClickSerial}"
+            />
+
 
     </RelativeLayout>
 </layout>

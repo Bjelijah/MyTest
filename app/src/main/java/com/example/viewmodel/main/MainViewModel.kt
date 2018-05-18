@@ -12,6 +12,9 @@ import io.reactivex.functions.Action
  * Created by Administrator on 2017/12/27.
 */
 class MainViewModel(private val mContext: Context) : BaseViewModel {
+    override fun onCreate() {
+    }
+
     override fun onDestory() {}
 
     val onClickFlash     = Action { mContext.startActivity(Intent(mContext, Flash2Activity::class.java)) }
@@ -23,4 +26,5 @@ class MainViewModel(private val mContext: Context) : BaseViewModel {
     val onClickDagger2   = Action { mContext.startActivity(Intent(mContext,ExDagger2Activity::class.java)) }
     val onClickRoom      = Action { mContext.startActivity(Intent(mContext,RoomActivity::class.java))}
     val onClickList      = Action { mContext.startActivity(Intent(mContext,MyListViewActivity::class.java))}
+    val onClickSerial    = Action { mContext.startActivity(Intent(mContext,SerialActivity::class.java))}
 }

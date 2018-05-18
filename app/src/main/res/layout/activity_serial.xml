@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.viewmodel.serial.SerialViewModel" />
+    </data>
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+
+        <Button
+            android:id="@+id/btn_serial_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="41dp"
+            android:text="serial open"
+            android:onClick="@{vm.onClickOpen}"
+            />
+
+        <Button
+            android:id="@+id/btn_serial_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="126dp"
+            android:text="serial close"
+            android:onClick="@{vm.onClickClose}"/>
+
+        <Button
+            android:id="@+id/btn_serial_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btn_serial_open"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="205dp"
+            android:text="serial send"
+            android:onClick="@{vm.onClickSend}"/>
+    </RelativeLayout>
+
+</layout>

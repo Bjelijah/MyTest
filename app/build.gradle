@@ -84,7 +84,7 @@ dependencies {
     compile 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'
 
     implementation project(path: ':mylibrary')
-
+    implementation project(path: ':usbSerialForAndroid')
     // Leak Canary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
@@ -115,4 +115,7 @@ dependencies {
     compile "android.arch.persistence.room:rxjava2:+"
     annotationProcessor "android.arch.persistence.room:compiler:+"
     kapt "android.arch.persistence.room:compiler:+"
+
+    //serial
+    compile 'com.github.kongqw:AndroidSerialPort:1.0.1'
 }

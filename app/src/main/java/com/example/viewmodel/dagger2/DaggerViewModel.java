@@ -39,7 +39,11 @@ public class DaggerViewModel implements BaseViewModel {
             @Override
             public void run() throws Exception {
                 Log.i("123","on btnClick");
-                mCar1.print();
+                try {
+                    mCar1.print();
+                }catch (NullPointerException e){
+                    e.printStackTrace();
+                }
             }
         };
     }
@@ -59,6 +63,11 @@ public class DaggerViewModel implements BaseViewModel {
 
     @Override
     public void onDestory() {
+
+    }
+
+    @Override
+    public void onCreate() {
 
     }
 }
