@@ -24,10 +24,27 @@ android {
         enabled = true
     }
 
+    signingConfigs {
+        config {
+            storeFile file("mytest.keystore")
+            storePassword "123456"
+            keyAlias "mytest"
+            keyPassword "123456"
+        }
+
+    }
+
+
     buildTypes {
         release {
+            debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            debuggable true
+            signingConfig signingConfigs.config
         }
     }
 
@@ -85,6 +102,7 @@ dependencies {
 
     implementation project(path: ':mylibrary')
     implementation project(path: ':usbSerialForAndroid')
+//    implementation project(path: ':netease')
     // Leak Canary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
