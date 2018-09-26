@@ -51,6 +51,9 @@
         <activity android:name=".ExDagger2Activity"/>
         <activity android:name=".RoomActivity"/>
         <activity android:name=".MyListViewActivity"/>
+        <activity android:name=".LiveActivity"/>
+
+
         <activity android:name=".SerialActivity">
 
             <intent-filter>

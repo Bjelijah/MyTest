@@ -27,4 +27,5 @@ class MainViewModel(private val mContext: Context) : BaseViewModel {
     val onClickRoom      = Action { mContext.startActivity(Intent(mContext,RoomActivity::class.java))}
     val onClickList      = Action { mContext.startActivity(Intent(mContext,MyListViewActivity::class.java))}
     val onClickSerial    = Action { mContext.startActivity(Intent(mContext,SerialActivity::class.java))}
+    val onClickLive      = Action { mContext.startActivity(Intent(mContext,LiveActivity::class.java))}
 }

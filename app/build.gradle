@@ -24,10 +24,27 @@ android {
         enabled = true
     }
 
+    signingConfigs {
+        config {
+            storeFile file("mytest.keystore")
+            storePassword "123456"
+            keyAlias "mytest"
+            keyPassword "123456"
+        }
+
+    }
+
+
     buildTypes {
         release {
+            debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            debuggable true
+            signingConfig signingConfigs.config
         }
     }
 
@@ -55,6 +72,11 @@ android {
     kapt {
         generateStubs = true
     }
+
+    lintOptions {
+        disable 'InvalidPackage'
+        abortOnError false
+    }
     useLibrary 'org.apache.http.legacy'
 }
 
@@ -65,7 +87,7 @@ dependencies {
     })
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.android.support:appcompat-v7:26+'
-    compile 'com.android.support:design:26+'
+    implementation 'com.android.support:design:26+'
     testCompile 'junit:junit:4.12'
     kapt 'com.android.databinding:compiler:2.3.3'
     compile 'com.google.android.exoplayer:exoplayer:r2.3.1'
@@ -85,6 +107,7 @@ dependencies {
 
     implementation project(path: ':mylibrary')
     implementation project(path: ':usbSerialForAndroid')
+    implementation project(path: ':netease')
     // Leak Canary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
