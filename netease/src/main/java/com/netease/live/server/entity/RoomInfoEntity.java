@@ -79,4 +79,18 @@ public class RoomInfoEntity implements Serializable {
     public void setHttpPullUrl(String httpPullUrl) {
         this.httpPullUrl = httpPullUrl;
     }
+
+    @Override
+    public String toString() {
+        return "RoomInfoEntity{" +
+                "roomid=" + roomid +
+                ", owner='" + owner + '\'' +
+                ", pushUrl='" + pushUrl + '\'' +
+                ", rtmpPullUrl='" + rtmpPullUrl + '\'' +
+                ", hlsPullUrl='" + hlsPullUrl + '\'' +
+                ", httpPullUrl='" + httpPullUrl + '\'' +
+                ", cid='" + cid + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }

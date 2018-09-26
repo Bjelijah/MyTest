@@ -12,4 +12,16 @@ public class PublishParam implements Serializable {
     public boolean faceBeauty = false; //是否开启美颜
     public boolean openVideo = true;
     public boolean openAudio = true;
+
+    @Override
+    public String toString() {
+        return "PublishParam{" +
+                "pushUrl='" + pushUrl + '\'' +
+                ", definition='" + definition + '\'' +
+                ", useFilter=" + useFilter +
+                ", faceBeauty=" + faceBeauty +
+                ", openVideo=" + openVideo +
+                ", openAudio=" + openAudio +
+                '}';
+    }
 }

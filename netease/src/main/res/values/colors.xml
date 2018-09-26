@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">@color/black</color>
+    <color name="colorAccent">#346fc3</color>
+    <color name="textColorPrimary">@color/black</color>
 
     <color name="transparent">#00000000</color>
     <color name="white">#FFFFFF</color>
@@ -62,4 +66,14 @@
     <color name="color_black_ff999999">#ff999999</color>
     <color name="color_gray_bfc2c5">#bfc2c5</color>
 
+    <color name="color_black_20">#33FFFFFF</color>
+    <color name="color_black_30">#4CFFFFFF</color>
+    <color name="mix_audio_bg">#80000000</color>
+    <color name="text_color_333333">#ff333333</color>
+    <color name="text_hint_color_999999">#ff999999</color>
+    <color name="video_detail_divide_line">#cbd0d8</color>
+    <color name="radio_btn">#346fc3</color>
+    <color name="text_color_content">#aaaaaa</color>
+    <color name="group_small_text_color">#ABAABF</color>
+    <color name="bg_media_player_controller">#7f000000</color>
 </resources>

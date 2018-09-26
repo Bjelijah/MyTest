@@ -10,8 +10,8 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.netease.live.DemoCache;
-import com.netease.live.liveStreaming.CapturePreviewController;
-import com.netease.live.liveStreaming.MediaCaptureWrapper;
+import com.netease.live.streaming.CapturePreviewController;
+import com.netease.live.streaming.MediaCaptureWrapper;
 
 import java.io.File;
 import java.io.FileOutputStream;

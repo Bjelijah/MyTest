@@ -2,13 +2,13 @@ apply plugin: 'com.android.library'
 
 android {
     useLibrary 'org.apache.http.legacy'
-    compileSdkVersion 25
+    compileSdkVersion 26
 
 
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
 
@@ -44,13 +44,13 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:25.3.1'
-    implementation 'com.android.support:design:25.3.1'
+    implementation 'com.android.support:appcompat-v7:26+'
+    implementation 'com.android.support:design:26+'
 
-
-
-    implementation 'com.android.support:appcompat-v7:25.0.0-rc02'
+   // implementation 'com.android.support:appcompat-v7:26+'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.alibaba:fastjson:1.2.49'
+
 }

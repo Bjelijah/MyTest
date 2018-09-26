@@ -21,13 +21,14 @@ import android.widget.Toast;
 import com.netease.LSMediaCapture.Statistics;
 import com.netease.LSMediaCapture.lsMediaCapture;
 import com.netease.LSMediaCapture.lsMessageHandler;
-import com.netease.live.R;
+
 import com.netease.live.util.VcloudFileUtils;
 import com.netease.live.util.network.NetworkMonitor;
 import com.netease.live.util.network.NetworkUtils;
 import com.netease.live.widget.MixAudioDialog;
 import com.netease.live.widget.MixAudioLayout;
 import com.netease.live.widget.NetWorkInfoDialog;
+import com.netease.nim.uikit.R;
 import com.netease.nim.uikit.common.ui.dialog.DialogMaker;
 import com.netease.vcloud.video.effect.VideoEffect;
 import com.netease.vcloud.video.render.NeteaseView;
@@ -387,8 +388,8 @@ public class CapturePreviewController extends CapturePreviewContract.CapturePrev
             if(mWaterMarkOn && (captureWrapper.isVideo())){
                 int mWaterMarkPosX = (int) (captureWrapper.getmVideoDecodeHeight() * ( 0.95 - PERCENT_OF_WATERMARK));//视频水印坐标(X)
                 int mWaterMarkPosY = 10;//视频水印坐标(Y)
-                Bitmap water = BitmapFactory.decodeResource(mContext.getResources(),R.drawable.ic_water_mark);
-                mLSMediaCapture.setWaterMarkPara(water, mWaterMarkPosX, mWaterMarkPosY);
+       //         Bitmap water = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.ic_water_mark);
+       //         mLSMediaCapture.setWaterMarkPara(water, mWaterMarkPosX, mWaterMarkPosY);
             }
 
             //6、开始直播

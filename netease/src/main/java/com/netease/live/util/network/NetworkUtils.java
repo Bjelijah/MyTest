@@ -5,7 +5,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import com.netease.live.DemoCache;
-import com.netease.live.server.DemoServerHttpClient;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,7 +14,7 @@ import java.io.InputStreamReader;
  * Created by zhukkun on 1/23/17.
  */
 public class NetworkUtils {
-
+    public static final String TEST_HOST = "vcloud.163.com";
     public static final int TYPE_UNKNOW = 0;
     public static final int TYPE_MOBILE = 1;
     public static final int TYPE_WIFI = 2;
@@ -56,7 +55,7 @@ public class NetworkUtils {
 
             boolean connect =  networkInfo.isAvailable() && networkInfo.isConnected();
             if(needReliable){
-                return connect && ping(DemoServerHttpClient.TEST_HOST, 1, builder);
+                return connect && ping(TEST_HOST, 1, builder);
             }else{
                 return connect;
             }

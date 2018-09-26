@@ -3,6 +3,8 @@
 
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application>
         <!-- 会话窗口 -->
         <!-- UI组件中包含了语音选文字功能，该界面是全屏显示，为了视觉上的美观，该界面主题ActionBar使用Overlay模式。
@@ -133,5 +135,11 @@
         <activity android:name=".team.activity.TeamMemberListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+
+        <!-- user  -->
+        <activity android:name="com.netease.api.CaptureActivity"></activity>
+
+
     </application>
 </manifest>
