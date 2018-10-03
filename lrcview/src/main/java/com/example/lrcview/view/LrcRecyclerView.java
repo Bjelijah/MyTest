@@ -6,13 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 
 import com.example.lrcview.ILrcView;
 import com.example.lrcview.ILrcViewListener;
@@ -113,7 +110,7 @@ public class LrcRecyclerView extends RecyclerView implements ILrcView {
                     || (time > cur.time && next == null)){
 
                 if (cur.isCur==false) {
-                    Log.i("123","i:"+i+"   cur="+cur.time+"   next="+next.time);
+                 //   Log.i("123","i:"+i+"   cur="+cur.time+"   next="+next.time);
                     cur.isCur = true;
                     mAdapter.notifyItemRangeChanged(i - 1, 2);
                     //scrollToPosition(i);
@@ -125,8 +122,11 @@ public class LrcRecyclerView extends RecyclerView implements ILrcView {
                     //逐字变化
 
                     if (next!=null) {
-                        mCurProgress = (time - cur.time) / (next.time - cur.time);
-                        mAdapter.notifyItemChanged(i);
+                        mCurProgress = (time - cur.time) / (float)(next.time - cur.time);
+                        Log.i("123","mCurProgress="+mCurProgress);
+                        if (mCurProgress>0.05) {
+                            mAdapter.notifyItemChanged(i);
+                        }
                     }else{
 
                     }
@@ -172,6 +172,7 @@ public class LrcRecyclerView extends RecyclerView implements ILrcView {
 //                h.tv.setTextColor(mContext.getResources().getColor(R.color.text_highlight));
                 h.tv.setTextOriginColor(mContext.getResources().getColor(R.color.text_highlight));
                 h.tv.setTextChangeColor(mContext.getResources().getColor(R.color.text_read));
+                Log.e("123","init  set progress:"+mCurProgress);
                 h.tv.setProgress(mCurProgress);
 //                h.tv.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimensionPixelSize(R.dimen.highlight_text_size));
 
