@@ -123,6 +123,7 @@ public class LrcRecyclerView extends RecyclerView implements ILrcView {
                     }
                 }else{
                     //逐字变化
+
                     if (next!=null) {
                         mCurProgress = (time - cur.time) / (next.time - cur.time);
                         mAdapter.notifyItemChanged(i);
