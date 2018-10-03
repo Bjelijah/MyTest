@@ -108,6 +108,7 @@ dependencies {
     implementation project(path: ':mylibrary')
     implementation project(path: ':usbSerialForAndroid')
     implementation project(path: ':netease')
+    implementation project(path: ':lrcview')
     // Leak Canary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'

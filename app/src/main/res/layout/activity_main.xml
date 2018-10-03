@@ -128,6 +128,15 @@
             android:onClick="@{vm.onClickLive}"
             android:text="网易直播" />
 
+        <Button
+            android:id="@+id/btn_lrc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_exListView"
+            android:layout_alignTop="@+id/btn_test"
+            android:text="lrc滚动歌词"
+            android:onClick="@{vm.onClickLrc}"/>
+
 
     </RelativeLayout>
 </layout>

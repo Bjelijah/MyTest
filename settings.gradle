@@ -1,1 +1,1 @@
-include ':app', ':mylibrary',':usbSerialForAndroid', ':netease'
+include ':app', ':mylibrary',':usbSerialForAndroid', ':netease', ':lrcview'
