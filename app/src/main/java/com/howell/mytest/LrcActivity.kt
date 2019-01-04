@@ -89,18 +89,6 @@ class LrcActivity :AppCompatActivity(){
                 }
             }
             Log.i("123","result=$result")
-
-//            while((line = bufReader.readLine()) != null){
-//                if(line.trim().equals(""))
-//                    continue;
-//                result += line + "\r\n";
-//            }
-
-//            while ((line = bufReader.readLine())!=null){
-//                if (line.trim { it <= ' ' } == "")
-//                    continue
-//                result += line + "\r\n"
-//            }
             return result
         } catch (e: Exception) {
             e.printStackTrace()

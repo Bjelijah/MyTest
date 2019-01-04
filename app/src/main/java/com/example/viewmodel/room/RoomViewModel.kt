@@ -63,7 +63,7 @@ class RoomViewModel:BaseViewModel {
         num++
         var usr = User(name ="user: $num")
 
-        Observable.fromCallable({dao.insertUser(usr)})
+        Observable.fromCallable {dao.insertUser(usr)}
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
