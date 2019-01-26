@@ -137,6 +137,15 @@
             android:text="lrc滚动歌词"
             android:onClick="@{vm.onClickLrc}"/>
 
+        <Button
+            android:id="@+id/btn_sound_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_exListView"
+            android:layout_alignTop="@+id/btn_voice"
+            android:text="SendSound"
+            android:onClick="@{vm.onClickSend}"/>
+
 
     </RelativeLayout>
 </layout>

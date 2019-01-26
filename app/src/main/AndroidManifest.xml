@@ -53,7 +53,7 @@
         <activity android:name=".MyListViewActivity"/>
         <activity android:name=".LiveActivity"/>
         <activity android:name=".LrcActivity"/>
-
+        <activity android:name=".SoundSendActivity"/>
         <activity android:name=".SerialActivity">
 
             <intent-filter>

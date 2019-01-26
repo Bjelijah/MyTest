@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/lrcview/lrcview.iml" filepath="$PROJECT_DIR$/lrcview/lrcview.iml" />
       <module fileurl="file://$PROJECT_DIR$/mylibrary/mylibrary.iml" filepath="$PROJECT_DIR$/mylibrary/mylibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/netease/netease.iml" filepath="$PROJECT_DIR$/netease/netease.iml" />
+      <module fileurl="file://$PROJECT_DIR$/soundsend/soundsend.iml" filepath="$PROJECT_DIR$/soundsend/soundsend.iml" />
       <module fileurl="file://$PROJECT_DIR$/usbSerialForAndroid/usbSerialForAndroid.iml" filepath="$PROJECT_DIR$/usbSerialForAndroid/usbSerialForAndroid.iml" />
     </modules>
   </component>
